@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>分栏CSS</title>
+    <style>
+        .resize-bar{
+            border: 1px solid #bbb;
+            width: 100px;
+            height: 100px;
+            /* resize实现大小可拖动 */
+            resize: horizontal;
+            overflow: scroll;
+        }
+        /* 修改默认拖动角的样式 */
+        .resize-bar::-webkit-scrollbar{
+            width: 60px;
+            height:60px;
+        }
+    </style>
+</head>
+<body>
+  让一个div可拖动
+    <div class="resize-bar"></div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+:root {
+  --ydBackground: yellowgreen;
+  --ydSize: 1rem;
+}
+
+/* BEM方式命名 */
+.widget-nav {
+  font-size: var(--ydSize);
+}
+
+.widget-nav__item {
+  & a {
+    color: var(--ydBackground);
+  }
+}
+
+.widget-nav--active {
+  color: aqua;
+}
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+:--heading {
+  margin: 0;
+}
+
+@supports(display: flex){
+  body{
+    background: yellow;
+  }
+}
+
+/* css module测试 */
+.yideng{
+  border: 1px solid red;
+}

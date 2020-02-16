@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>css 绘制特殊图形</title>
+  <style>
+    div{
+      width: 100px;
+      height: 100px;
+      border: 30px solid;
+      background-color: orange;
+      border-left-color: blueviolet;
+      border-right-color: brown;
+      border-top-color: yellowgreen;
+      border-bottom-color: teal;
+      margin: 10px;
+    }
+    .三角形{
+      width: 0px;
+      height: 0px;
+      background-color: transparent;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      border-top-color: transparent;
+      border-bottom-color: teal;
+    }
+    .直角三角形{
+      width: 0px;
+      height: 0px;
+      background-color: transparent;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-left-color: teal;
+    }
+    .对角切割 {
+      width: 0px;
+      height: 0px;
+      background-color: transparent;
+      border-bottom: 0;
+      border-left: 0;
+  }
+    .直角三角形2{
+      background-color: transparent;
+      border-top-color: transparent;
+    }
+    .梯形{
+      height: 0px;
+      background-color: transparent;
+      border-right-color: transparent;
+      border-left-color: transparent;
+      border-top-color: transparent;
+    }
+    .圆环{
+      border-radius: 50%;
+    }
+    .圆{
+      border:0;
+      border-radius: 50%;
+    }
+    .椭圆{
+      border:0;
+      width: 200px;
+      border-top-left-radius: 50%;
+      border-top-right-radius: 50%;
+      border-bottom-left-radius: 50%;
+      border-bottom-right-radius: 50%;
+      /* border-radius: 50%; */
+    }
+  </style>
+</head>
+<body>
+  <div class="原始图形"></div>
+  <div class="三角形"></div>
+  <div class="直角三角形"></div>
+  <div class="对角切割"></div>
+  <div class="对角切割 直角三角形2"></div>
+  <div class="梯形"></div>
+  <div class="圆环"></div>
+  <div class="圆"></div>
+  <div class="椭圆"></div>
+</body>
+</html>

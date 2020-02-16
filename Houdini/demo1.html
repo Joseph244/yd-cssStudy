@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Houdini实战1</title>
+    <style>
+        body:before {
+            --star-sky: 1;
+            background-image: paint(yd-sky);
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        CSS.paintWorklet.addModule("./sky.js");
+    </script>
+</body>
+
+</html>

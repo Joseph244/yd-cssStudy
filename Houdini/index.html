@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .el {
+            --elUnit: 500px;
+            --arcColor: #8266ff;
+            height: var(--elUnit);
+            width: var(--elUnit);
+            background: url("../test.png");  /* 2.使用图片或者gif做Houdini不支持时候的降级展示 */
+
+            /* 1.Houdini（实现了js in css，跳过重绘和重排使用GPU渲染）：绘制canvas，除了不可以操作dom，其他就是canvas语法；把canvas效果直接粘贴过来就可以 */
+            --background-canvas: (ctx, geom)=> {
+                ctx.strokeStyle= `var(--arcColor)`;
+                ctx.lineWidth=2;
+                ctx.beginPath();
+                ctx.arc(200, 200, 50, 0, 2*Math.PI);
+                ctx.stroke();
+                ctx.closePath();
+            };
+            /* background-canvas 为Houdini中的自定义属性 */
+            background: paint(background-canvas);
+        }
+    </style>
+    <title>Houdini实战1</title>
+</head>
+
+<body>
+    需要使用http-server 启动访问才可，否则资源无法获取
+    <div class="el"></div>
+</body>
+<script>
+    CSS.paintWorklet.addModule("./arc.js");  // 这行代码是浏览器原生支持的
+</script>
+
+</html>

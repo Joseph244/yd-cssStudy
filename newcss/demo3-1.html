@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>可拖动大小的左右分栏布局</title>
+    <style>
+        :root {
+            --ydUnit: 400px;
+        }
+
+        .column {
+            overflow: hidden;
+            border: 1px dashed yellowgreen;
+        }
+
+        .column-left {
+            height: var(--ydUnit);
+            position: relative;
+            float: left;
+        }
+
+        .column-right {
+            padding: 16px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .resize-content {
+            position: absolute;
+            top: 0;
+            right: 5px;
+            bottom: 0;
+            left: 0;
+            padding: 16px;
+            overflow-x: hidden;
+        }
+
+        .resize-bar {
+            width: 200px;
+            height: inherit;
+            /* 支持拖动 */
+            resize: horizontal;
+            overflow: scroll;
+            /* 指示双向重新设置大小 */
+            /* cursor: ew-resize; */
+            /* 通过透明隐藏拖动下标样式 */
+            opacity: 0;
+        }
+
+        .resize-bar::-webkit-scrollbar {
+            height: inherit;
+        }
+        /* 分割线 */
+        .resize-line {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            /* 两条线有刻在页面内的阴影视觉效果 */
+            border-right: 2px solid #eee;
+            border-left: 1px solid #bbb;
+            /* 取消鼠标事件 */
+            pointer-events: none;
+        }
+
+        .resize-bar:hover ~ .resize-line{
+            border-left: 1px dashed aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="column">
+        <div class="column-left">
+            <div class="resize-bar"></div>
+            <div class="resize-line"></div>
+            <div class="resize-content">左侧内容 左侧内容 左侧内容 左侧内容 左侧内容</div>
+        </div>
+        <div class="column-right">
+            右侧内容 右侧内容 右侧内容 右侧内容 右侧内容 右侧内容 右侧内容
+        </div>
+    </div>
+</body>
+
+</html>

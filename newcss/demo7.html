@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>混合模式+滤镜</title>
+    <style>
+        .night{
+            width: 780px;
+            height: 520px;
+            background: rgba(0,40,140,0.6) url(./assets/house.jpeg);
+            /* 混合模式：实现房间黑夜效果 */
+            background-blend-mode: darken;
+            /* 滤镜：brightness 亮度 contrast 对比度 grayscale 灰度 */
+            filter: brightness(80%) grayscale(20%) contrast(1.2)
+        }
+    </style>
+</head>
+<body>
+    <div class="night"></div>
+</body>
+</html>
